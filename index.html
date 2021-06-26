@@ -89,7 +89,7 @@
            color: rgb(110, 117, 124);
        }
        #flight{
-           display: none;
+           display: block;
        }
        #hotel{
            display: none;
@@ -132,12 +132,12 @@
                 <div class="book mx-auto my-4">
                     <div class="col-sm-12 book-link">
                         <button id="Flight" onfocus="flight()"><i class="fa fa-plane" aria-hidden="true"></i> Flight</button>
-                        <button id="Hotel" onclick="hotel()"><i class="fas fa-hotel"></i> Hotel</button>
-                        <button id="Bus"><i class="fas fa-bus"></i>
+                        <button id="Hotel" onfocus="hotel()"><i class="fas fa-hotel"></i> Hotel</button>
+                        <button id="Bus" onfocus="bus()"><i class="fas fa-bus"></i>
                             Bus</button>
-                        <button id="Tour">
+                        <button id="Tour" onfocus="tour()">
                             <i class="fas fa-hiking"></i> Tour</button>
-                        <button id="Visa"><i class="fas fa-passport"></i>
+                        <button id="Visa" onfocus="visa()"><i class="fas fa-passport"></i>
                             Visa</button>
 
                     </div>
@@ -454,20 +454,88 @@
             var x = document.getElementById("flight");
                 if (x.style.display === "none") {
                     x.style.display = "block";
+                    document.getElementById("bus").style.display = "none";
+                    document.getElementById("hotel").style.display = "none";
+                    document.getElementById("tour").style.display = "none";
+                    document.getElementById("visa").style.display = "none";
+                    
                 } else {
-                    x.style.display = "none";
+                    x.style.display = "block";
+                    document.getElementById("bus").style.display = "none";
+                    document.getElementById("hotel").style.display = "none";
+                    document.getElementById("tour").style.display = "none";
+                    document.getElementById("visa").style.display = "none";
                 }
             }
             function hotel(){
            
-           var x = document.getElementById("hotel");
-               if (x.style.display === "none") {
-                   x.style.display = "block";
-               } else {
-                   x.style.display = "none";
-               }
+                    var y = document.getElementById("hotel");
+                        if (y.style.display === "none") {
+                            y.style.display = "block";
+                            document.getElementById("bus").style.display = "none";
+                            document.getElementById("flight").style.display = "none";
+                            document.getElementById("tour").style.display = "none";
+                            document.getElementById("visa").style.display = "none";
+                        } else {
+                            y.style.display = "block";
+                            document.getElementById("bus").style.display = "none";
+                            document.getElementById("flight").style.display = "none";
+                            document.getElementById("tour").style.display = "none";
+                            document.getElementById("visa").style.display = "none";
+                        }
            }
+           function bus(){
+           
+           var z = document.getElementById("bus");
+               if (z.style.display === "none") {
+                   z.style.display = "block";
+                   document.getElementById("hotel").style.display = "none";
+                   document.getElementById("flight").style.display = "none";
+                   document.getElementById("tour").style.display = "none";
+                   document.getElementById("visa").style.display = "none";
+               } else {
+                   z.style.display = "block";
+                   document.getElementById("hotel").style.display = "none";
+                   document.getElementById("flight").style.display = "none";
+                   document.getElementById("tour").style.display = "none";
+                   document.getElementById("visa").style.display = "none";
+               }
+  }
+  function tour(){
+           
+           var a = document.getElementById("tour");
+               if (a.style.display === "none") {
+                   a.style.display = "block";
+                   document.getElementById("bus").style.display = "none";
+                   document.getElementById("flight").style.display = "none";
+                   document.getElementById("bus").style.display = "none";
+                   document.getElementById("visa").style.display = "none";
+               } else {
+                   a.style.display = "block";
+                   document.getElementById("bus").style.display = "none";
+                   document.getElementById("flight").style.display = "none";
+                   document.getElementById("bus").style.display = "none";
+                   document.getElementById("visa").style.display = "none";
+               }
+  }
         
+  function visa(){
+           
+           var b = document.getElementById("visa");
+               if (b.style.display === "none") {
+                   b.style.display = "block";
+                   document.getElementById("bus").style.display = "none";
+                   document.getElementById("flight").style.display = "none";
+                   document.getElementById("tour").style.display = "none";
+                   document.getElementById("bus").style.display = "none";
+               } else {
+                   b.style.display = "block";
+                   document.getElementById("bus").style.display = "none";
+                   document.getElementById("flight").style.display = "none";
+                   document.getElementById("tour").style.display = "none";
+                   document.getElementById("bus").style.display = "none";
+               }
+  }
     </script>
 
     <!-- Optional JavaScript -->
