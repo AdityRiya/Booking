@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Booking</title>
+    <style>
+        #book{
+            min-height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+       }
+       .book{
+       
+        background-color: rgb(253, 254, 255);
+        border-radius: 10px;
+        width: 90%;
+        box-shadow: 5px 10px 20px slategray;
+        
+       }
+       .book .book-link{
+           
+           background-color: white;
+           width: 70%;
+           padding: 0px 10%;
+           margin: auto;
+           margin-top: -25px;
+           box-shadow: 1px 5px 10px rgb(196, 195, 195);
+           display: flex;
+           justify-content: space-between;
+           border-radius: 10px;
+
+       }
+       .book .book-link button{
+           padding: 20px 15px;
+           background: none;
+           border: none;
+            font-weight: 600;
+            color: rgb(100, 100, 100);
+       }
+       .book .book-link button:focus{
+           border: none;
+          border-bottom: 2px solid skyblue;
+
+
+
+       }
+       .book .book-link button:focus i{
+            color: rgb(70, 177, 219);          
+
+       }
+       .book .book-search{
+           margin: auto;
+           margin-bottom: -20px;
+           padding: 7px 30px;
+           font-size: 18px;
+           background-image: linear-gradient(rgb(255, 81, 0) ,orange);
+           color: white;
+           border: 2px solid sienna;
+           border-radius: 10px;
+
+       }
+       .book .book-search:hover{
+           border-radius: 5px;
+           box-shadow: 2px 5px 10px rgb(163, 161, 161);
+       }
+       .full{
+           border: 1px solid gray;
+           border-radius: 5px;
+           padding: 5px;
+       }
+       .full select{
+           border: none;
+       }
+       .full input{
+           border: none;
+       }
+       .book label{
+           font-weight: bold;
+           color: rgb(110, 117, 124);
+       }
+       #flight{
+           display: none;
+       }
+       #hotel{
+           display: none;
+       }
+       #bus{
+           display: none;
+       }
+       #tour{
+           display: none;
+       }
+       #visa{
+           display: none;
+       }
+       
+       @media only screen and (max-width: 800px) {
+            .book{
+                width: 100%;
+                font-size: 14px;
+            }
+            .book .book-link{
+                width: 90%;
+                padding: 0px 5px;
+            }
+       }
+       @media only screen and (max-width: 400px) {
+           .book{
+               font-size: 11px;
+           }
+           .book .book-link{
+              
+           }
+
+       }
+    </style>
+  </head>
+  <body>
+    <section id="book" style="background-image: url(https://img.freepik.com/free-photo/fantasy-sky_90839-278.jpg?size=626&ext=jpg);">
+        <div class="container">
+            <div class="row my-4">
+                <div class="book mx-auto my-4">
+                    <div class="col-sm-12 book-link">
+                        <button id="Flight" onfocus="flight()"><i class="fa fa-plane" aria-hidden="true"></i> Flight</button>
+                        <button id="Hotel" onclick="hotel()"><i class="fas fa-hotel"></i> Hotel</button>
+                        <button id="Bus"><i class="fas fa-bus"></i>
+                            Bus</button>
+                        <button id="Tour">
+                            <i class="fas fa-hiking"></i> Tour</button>
+                        <button id="Visa"><i class="fas fa-passport"></i>
+                            Visa</button>
+
+                    </div>
+                    <div class="col-sm-12 mt-4" id="flight">
+                        <div class="row mx-4">
+                            <div class="col-sm-12">
+                            <form action="">
+                                <div class="form-row">
+                                    <div class="col-sm-6 col-md-3 my-2 ">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                              <b>RETURN</b>
+                                            </label>
+                                          </div>        
+                                    </div>
+                                    <div class="col-sm-6  col-md-3 my-2  ">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                              <b>ONE WAY</b>
+                                            </label>
+                                          </div>        
+                                    </div>
+                                    <div class="col-sm-6  col-md-3 my-2  ">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                              <b>MULTI-CITY</b>
+                                            </label>
+                                          </div>        
+                                    </div>
+                                    <div class="col-sm-6  col-md-3 my-2  ">
+                                        <select class="w-100 p-1">
+                                            
+                                            <option>Flexible</option>
+                                            <option>Fixed</option>
+                                                               
+                                        </select>       
+                                    </div>
+                                </div>
+                                <div class="form-row mt-4">
+                                    <div class="col-sm-6 col-md-3 my-2">
+                                        <div class="full">
+                                            <label for="">From</label>
+                                            <select class="w-100 ">
+                                            
+                                                <option value="">Select Place</option>
+                                                <option value="0">Dhaka</option>
+                                                <option value="1">Barishal</option>
+                                            </select>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="col-sm-6 col-md-3 my-2">
+                                        <div class="full">
+                                            <label for="">To</label>
+                                            <select class="w-100 ">
+                                            
+                                                <option value="">Select Place</option>
+                                                <option value="0">Dhaka</option>
+                                                <option value="1">Barishal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3 my-2">
+                                        <div class="full">
+                                            <label for="">Departing Date</label>
+                                            <input class="w-100" placeholder="SELECT DATE" type="text" onfocus="(this.type = 'date')"  id="date">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3 my-2">
+                                        <div class="full">
+                                            <label for="">Returning Date</label>
+                                            <input class="w-100" placeholder="SELECT DATE" type="text" onfocus="(this.type = 'date')"  id="date">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-row my-4">
+                                    <div class="col-sm-6 col-md-3 my-2">
+                                        <div class="form-row">
+                                            <div class="col-6">
+                                                <label for="">Adults <br>
+                                                <small>(12+ Years)</small></label>
+                                            </div>
+                                            <div class="col-6 mt-2">
+                                                <input class="w-100" placeholder="0" type="number" name="" id="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-6 col-md-3 my-2">
+                                        <div class="form-row">
+                                            <div class="col-6">
+                                                <label for="">Children <br>
+                                                <small>(2-12 Years)</small></label>
+                                            </div>
+                                            <div class="col-6 mt-2">
+                                                <input class="w-100"  placeholder="0" type="number" name="" id="">
+                                            </div>
+                                        </div>
+                                        
+
+                                    </div>
+                                    <div class="col-sm-6 col-md-3 my-2">
+                                        <div class="form-row">
+                                            <div class="col-6">
+                                                <label for="">Infants <br>
+                                                <small>(0 - 2 Years)</small></label>
+                                            </div>
+                                            <div class="col-6 mt-2">
+                                                <input class="w-100"  placeholder="0" type="number" name="" id="">
+                                            </div>
+                                        </div>
+                                        
+
+                                    </div>
+                                    <div class="col-sm-6 col-md-3 my-2">
+                                        <input   type="text" placeholder="PROMO CODE" class="w-100 mt-2">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    
+                                        
+                                        <button class="book-search">Search</button>
+                                   
+                                </div>
+                            </form>
+                        </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="col-sm-12 mt-4" id="hotel">
+                        <div class="row mx-4">
+                            <div class="col-sm-12">
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="col-sm-6 col-md-3 my-2">
+                                            <div class="full">
+                                                <label for="">City / Hotel / Resort / Area</label> <br>
+                                                <select class="w-100" name="" id="">
+                                                    <option value="">Select </option>
+                                                    <option value="">Cox's Bazar</option>
+                                                    <option value="">Dhaka</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-6 col-md-3 my-2">
+                                            <div class="full">
+                                                <label for="">Check In</label> <br>
+                                                <input class="w-100" placeholder="SELECT DATE" type="text" onfocus="(this.type = 'date')"  id="date">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-6 col-md-3 my-2">
+                                            <div class="full">
+                                                <label for="">Check Out</label> <br>
+                                                <input class="w-100" placeholder="SELECT DATE" type="text" onfocus="(this.type = 'date')"  id="date">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-6 col-md-3 my-2">
+                                            <div class="full">
+                                                <label for="">Rooms & Guests</label> <br>
+                                                <input class="w-100" type="number" placeholder="Select Number of Rooms">
+                                            </div>
+
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="form-row">
+                                    
+                                        
+                                        <button class="book-search">Search</button>
+                                   
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mt-4" id="bus">
+                        <div class="row mx-4">
+                            <div class="col-sm-12">
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="col-sm-4 col-md-4 my-2">
+                                            <div class="full">
+                                                <label for="">From</label> <br>
+                                                <select class="w-100" name="" id="">
+                                                    <option value="">Select </option>
+                                                    <option value="">Cox's Bazar</option>
+                                                    <option value="">Dhaka</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-4 col-md-4 my-2">
+                                            <div class="full">
+                                                <label for="">To</label> <br>
+                                                <select class="w-100" name="" id="">
+                                                    <option value="">Select </option>
+                                                    <option value="">Cox's Bazar</option>
+                                                    <option value="">Dhaka</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-4 col-md-4 my-2">
+                                            <div class="full">
+                                                <label for="">Journey Date</label> <br>
+                                                <input class="w-100" placeholder="SELECT DATE" type="text" onfocus="(this.type = 'date')"  id="date">
+                                            </div>
+
+                                        </div>
+                                       
+                                        
+                                    
+                                    </div>
+                                    <div class="form-row">
+                                    
+                                        
+                                        <button class="book-search">Search</button>
+                                   
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mt-4" id="tour">
+                        <div class="row mx-4">
+                            <div class="col-sm-12">
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="col-sm-12 col-md-12 my-2">
+                                            <div class="full">
+                                                <label for="">Location</label> <br>
+                                                <select class="w-100" name="" id="">
+                                                    <option value="">Select </option>
+                                                    <option value="">Cox's Bazar</option>
+                                                    <option value="">Dhaka</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                       
+                                        
+                                    
+                                    </div>
+                                    <div class="form-row">
+                                    
+                                        
+                                        <button class="book-search">Search</button>
+                                   
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mt-4" id="visa">
+                        <div class="row mx-4">
+                            <div class="col-sm-12">
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="col-sm-6 col-md-6 my-2">
+                                            <div class="full">
+                                                <label for="">Country</label> <br>
+                                                <select class="w-100" name="" id="">
+                                                    <option value="">Select </option>
+                                                    <option value="">Bangladesh </option>
+                                                    <option value="">India</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 my-2">
+                                            <div class="full">
+                                                <label for="">Visa Type</label> <br>
+                                                <select class="w-100" name="" id="">
+                                                    <option value="">Select </option>
+                                                    <option value="">Tourist</option>
+                                                   
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                       
+                                        
+                                    
+                                    </div>
+                                    <div class="form-row">
+                                    
+                                        
+                                        <button class="book-search">Search</button>
+                                   
+                                     </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>'
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <script>
+        function flight(){
+           
+            var x = document.getElementById("flight");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+            function hotel(){
+           
+           var x = document.getElementById("hotel");
+               if (x.style.display === "none") {
+                   x.style.display = "block";
+               } else {
+                   x.style.display = "none";
+               }
+           }
+        
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
